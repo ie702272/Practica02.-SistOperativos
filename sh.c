@@ -27,7 +27,7 @@ int main()
 		exit(0);
 	}
 	else if(!strcmp(SHUTDOWN, command) ){
-		printf("apagar\n");
+		kill(0,SIGTERM);
 	}
 	else if((command[0]=='.'||command[0]=='/')&&command[1]!=0){
 		pid_t child = fork();

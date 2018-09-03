@@ -43,7 +43,10 @@ int main()
       }
       if(comparer != 0)
       {
-        printf("Acceso permitido\n");
+        pid_t child = fork();
+		if(child == 0)
+			execlp("/usr/bin/xterm", "xterm", "-e", "./sh", NULL );
+	 wait(&status);
       }
   }
 }

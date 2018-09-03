@@ -33,6 +33,7 @@ int main()
 		pid_t child = fork();
 		if(child == 0)
 			execlp( XTERM_PATH, XTERM, "-e", command, NULL );
+		 wait(&status);
 	}
 		
     }

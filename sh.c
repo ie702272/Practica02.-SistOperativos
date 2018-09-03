@@ -11,7 +11,7 @@
 char EXIT[15];
 char SHUTDOWN[15];
 char command[15] = {0};
-
+int status;
 
 
 int main()
@@ -27,7 +27,7 @@ int main()
 		exit(0);
 	}
 	else if(!strcmp(SHUTDOWN, command) ){
-		kill(0,SIGTERM);
+		execlp( "/usr/bin/killall", "killall", "-e", "./init" , NULL );
 	}
 	else if((command[0]=='.'||command[0]=='/')&&command[1]!=0){
 		pid_t child = fork();

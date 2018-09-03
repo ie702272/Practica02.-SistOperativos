@@ -14,7 +14,7 @@ int main()
 
   for(i = 1; i<7; i++)
   {
-  	printf("Hola, soy el proceso %d\n hijo# %d\n",getpid(), i);
+  	printf("Hijo# %d\n", i);
   	p=fork();
   	if(p==0)
 		execlp("/usr/bin/xterm", "xterm", "-e", "./getty", NULL);

@@ -8,21 +8,22 @@
 int main()
 {
   pid_t p;
-	int status;
+  int status;
   int counter;
   int i;
 
   for(i = 1; i<7; i++)
   {
   	printf("Hola, soy el proceso %d\n hijo# %d\n",getpid(), i);
-  	// system("./holamundo"); // Llamada prohibida en la práctica 2
   	p=fork();
   	if(p==0)
-  		//execlp("./holamundo","holamundo",NULL);
-      execlp("/usr/bin/xterm", "xterm", "-e", "./ejemplo10", NULL);
-  	wait(&status);
-    //wait(NULL);
-  	printf("Adios, soy el proceso %d\n",getpid());
-  }
+		execlp("/usr/bin/xterm", "xterm", "-e", "./getty", NULL);
+  	}
+  while(1){
+	 wait(&status);
+	 p=fork();
+  	 if(p==0)
+		execlp("/usr/bin/xterm", "xterm", "-e", "./getty", NULL);
+	}
   return 0;
 }

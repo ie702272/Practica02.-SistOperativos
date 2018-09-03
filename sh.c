@@ -16,8 +16,8 @@ char command[15] = {0};
 
 int main()
 {
-	strcpy(EXIT, "Exit");
-	strcpy(SHUTDOWN, "Shutdown");
+	strcpy(EXIT, "exit");
+	strcpy(SHUTDOWN, "shutdown");
 	
 	while(1){
 	printf("Enter command: ");
@@ -30,7 +30,9 @@ int main()
 		printf("apagar\n");
 	}
 	else if((command[0]=='.'||command[0]=='/')&&command[1]!=0){
-		execlp( XTERM_PATH, XTERM, "-e", command, NULL );
+		pid_t child = fork();
+		if(child == 0)
+			execlp( XTERM_PATH, XTERM, "-e", command, NULL );
 	}
 		
     }

@@ -1,0 +1,18 @@
+1.- Revise el comando ps, y qué opciones tiene para su ejecución, explique ¿por qué cuando un
+usuario teclea el comando ps sin parámetros solo muestra unos cuantos procesos?
+Por que al utilizar ps puedes especificar cuanta información de los estados de los procesos quieres que te entregue dependiendo del parámetro que escribas, cuando lo tecleas sin parámetros escribe el "standart output", el cual tiene 4 columnas el pid del proceso, el tipo de terminal, el tiempo de cpu que ha estado corriendo el programa y el nombre del comando que lanzó el proceso.
+2.- Al ejecutar el proceso init ¿Qué procesos nuevos se muestran en el sistema?
+Al ejecutar init los nuevos procesos que se encuentran del sistema son las 6 ventanas del xterm y los 6 procesos getty que ejecuta el init.
+3.-Inicie al menos dos sesiones en las ventanas que creo getty y muestre la lista de procesos en la
+misma ventana donde ejecutó el proceso init, ¿qué procesos nuevos se muestran en el sistema?
+Con las dos sesiones iniciadas ahora aparecen otros 4 procesos los dos procesos sh que se inicializan al poner una cuenta y contraseña correcta en el proceso getty y sus dos ventanas de xterm correspondientes.
+4.- En una de las ventanas del shell creada por el proceso getty, tecleé el comando ps, ¿qué
+procesos se muestran?
+5.- ¿Qué efecto tiene la espera de un proceso hijo en el proceso getty?, ¿qué sucedería si no
+existiera esa espera?
+El efecto en el proceso getty es que antes de volver a pedir un usuario/contraseña nuevamente espera a que el usuario haga lo que quiera en el proceso sh y hasta entonces va a estar esperando a que cambie su status hasta terminar el proceso sh, si no existiera volveria a pedir otro usuario antes de abrir el proceso sh segun lo que experimentamos en la práctica.
+6.- En los procesos anteriores está utilizando la llamada exec que para reemplazar la imagen de un
+proceso busca el programa ejecutable en los directorios especificados en la variable de ambiente
+PATH. Investigue (buscar en documentación de UNIX) por qué esta llamada pueda hacer uso de
+los valores en la variable PATH sin que sea necesario inicializar esta variable en cada uno de sus
+procesos.

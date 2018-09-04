@@ -46,7 +46,7 @@ int main()
         pid_t child = fork();
 		if(child == 0)
 			execlp("/usr/bin/xterm", "xterm", "-e", "./sh", NULL );
-	 wait(&status);
+	wait(&status);
       }
   }
 }

@@ -8,6 +8,7 @@ misma ventana donde ejecutó el proceso init, ¿qué procesos nuevos se muestran
 Con las dos sesiones iniciadas ahora aparecen otros 4 procesos los dos procesos sh que se inicializan al poner una cuenta y contraseña correcta en el proceso getty y sus dos ventanas de xterm correspondientes.
 4.- En una de las ventanas del shell creada por el proceso getty, tecleé el comando ps, ¿qué
 procesos se muestran?
+Al teclear ps en el shell, el comando no responde, simplemente nos pide volver a escribir un comando; nos permite llamar xterm dentro de sh y ahí ps en donde nos aparece otro proceso de xterm.
 5.- ¿Qué efecto tiene la espera de un proceso hijo en el proceso getty?, ¿qué sucedería si no
 existiera esa espera?
 El efecto en el proceso getty es que antes de volver a pedir un usuario/contraseña nuevamente espera a que el usuario haga lo que quiera en el proceso sh y hasta entonces va a estar esperando a que cambie su status hasta terminar el proceso sh, si no existiera volveria a pedir otro usuario antes de abrir el proceso sh segun lo que experimentamos en la práctica.

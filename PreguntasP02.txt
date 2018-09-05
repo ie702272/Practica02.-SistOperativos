@@ -16,3 +16,4 @@ proceso busca el programa ejecutable en los directorios especificados en la vari
 PATH. Investigue (buscar en documentación de UNIX) por qué esta llamada pueda hacer uso de
 los valores en la variable PATH sin que sea necesario inicializar esta variable en cada uno de sus
 procesos.
+Por que path es parte del sistema operativo por lo que exec no necesita la dirección para ejecutarlo.
